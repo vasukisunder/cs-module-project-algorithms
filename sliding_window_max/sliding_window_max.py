@@ -5,7 +5,19 @@ Returns: a List of integers
 def sliding_window_max(nums, k):
     # Your code here
 
-    pass
+    i = 0
+    maxList = []
+
+    while k+i <= len(nums):
+        window = nums[i:k + i]
+        maxValue = max(window)
+
+        maxList.append(maxValue)
+        i += 1
+    
+    return maxList
+
+# works on regular test, fails on large number test
 
 
 if __name__ == '__main__':

@@ -4,8 +4,19 @@ Returns: a List of integers
 '''
 def moving_zeroes(arr):
     # Your code here
+    count = 0
+    for i in range(len(arr) - 1):
+        if arr[i] != 0:
+            arr[count] = arr[i]
+            count = count + 1
+        
+    while count < len(arr) - 1:
+        arr[count] = 0
+        count = count + 1
+    
+    return arr
 
-    pass
+## still need to fix this one ^ has a couple of errors
 
 
 if __name__ == '__main__':

@@ -4,9 +4,21 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    ans = []
 
-    pass
+    for i in arr:
+        res = 1
 
+        temp = [j for j in arr if j is not i]
+        
+        for j in temp:
+            res = res*j
+
+        ans.append(res)
+
+    return ans
+
+## doesnt work^ need to redo
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
