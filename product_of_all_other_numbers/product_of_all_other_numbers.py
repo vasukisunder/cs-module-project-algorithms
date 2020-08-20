@@ -2,23 +2,27 @@
 Input: a List of integers
 Returns: a List of integers
 '''
+
+def multiply(nums):
+    total = 1
+    for num in nums:
+        total *= num
+    return total
+
+
 def product_of_all_other_numbers(arr):
     # Your code here
     ans = []
 
     for i in arr:
-        res = 1
-
-        temp = [j for j in arr if j is not i]
-        
-        for j in temp:
-            res = res*j
-
-        ans.append(res)
-
+        newArr = arr.copy()
+        newArr.remove(i)
+        temp = multiply(newArr)
+        ans.append(temp)
+    
     return ans
 
-## doesnt work^ need to redo
+
 
 if __name__ == '__main__':
     # Use the main function to test your implementation
